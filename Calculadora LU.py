@@ -9,7 +9,7 @@ pi2 = pi**2
 # A = LU => (LU)X = Y => L(UX) = Y =>   LZ = Y    <= Z = UX;
 # Resolve-se LZ = Y por substituição avançada e então UX = Z por susbtituição atrasada.
 
-def calculadora_LU(matrix: list) -> tuple:
+def calculadora_LU(matrix: list) -> tuple:  # Decomposição LU
 
     n_matrix = len(matrix)
 
@@ -43,7 +43,7 @@ def calculo_z(L: list, y: list) -> list: # Substituição avançada
     return y
 
 
-def calculo_x(U: list, z: list) -> list:
+def calculo_x(U: list, z: list) -> list: # Substituição atrasada
     n_U = len(U)
     pivo_atual = n_U-1
     for i in range(n_U-1, -1, -1):
